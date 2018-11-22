@@ -182,4 +182,5 @@ exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 exec --no-startup-id compton
 
 # start emacs daemon
-exec --no-startup-id emacs --daemon=term
+exec --no-startup-id emacs --daemon=term# hide titlebar
+for_window [class="^.*"] border pixel 1
