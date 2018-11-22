@@ -172,6 +172,7 @@ bar {
 }
 
 # swap caps lock and escape
+
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
@@ -179,3 +180,6 @@ exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 # set wallpaper and transparent terminals
 exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
 exec --no-startup-id compton
+
+# start emacs daemon
+exec --no-startup-id emacs --daemon=term
