@@ -59,7 +59,7 @@ bindsym $alt+Control+Up scratchpad show
 # application management
 bindsym $win+Left exec i3-sensible-terminal
 bindsym $win+Right exec brave-browser
-bindsym $win+Up exec dmenu_run
+bindsym $win+Up exec --no-startup-id i3-dmenu-desktop
 bindsym $win+Down kill
 
 # reserve $win+Shift+<arrow> for more apps/bookmarks
@@ -183,15 +183,3 @@ exec --no-startup-id compton
 
 # automatically start emacs daemon
 exec --no-startup-id emacs --daemon=term
-
-#-----------------------------------------------------------------------------#
-# TODO
-#-----------------------------------------------------------------------------#
-
-# only launch desktop applications (because those are the only ones I can launch)
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $win+d exec --no-startup-id i3-dmenu-desktop
-
-# make nagbar less ugly
