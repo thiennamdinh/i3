@@ -72,10 +72,6 @@ bindsym $alt+Control+space mode "resize"
 bindsym $alt+Shift+space focus mode_toggle
 bindsym $alt+Control+Shift+space floating toggle
 
-# logging in/ou
-bindsym $win+l exec i3lock --color=000020
-bindsym $win+Shift+l exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # switch to workspace
 bindsym $win+1 workspace 1
 bindsym $win+2 workspace 2
@@ -120,6 +116,24 @@ mode "resize" {
 
 # use Mouse+$win to drag floating windows to their wanted position
 floating_modifier $win
+
+# Set shut down, restart and locking features
+bindsym $win+Control+l fullscreen disable,  mode "$mode_system"
+set $mode_system (l)ock, (e)xit, (win+r)eboot, (win+p)poweroff
+
+mode "$mode_system" {
+        bindsym l exec --no-startup-id i3lock --color=000020, mode "default"
+	bindsym e exec --no-startup-id i3-msg exit, mode "default"
+	bindsym $win+r exec --no-startup-id reboot, mode "default"
+	bindsym $win+p exec --no-startup-id poweroff, mode "default"
+
+	# exit system mode: "Enter" or "Escape"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+# logging in/ou
+bindsym $win+l exec i3lock --color=000020
 
 #-----------------------------------------------------------------------------#
 # Aesthetics
