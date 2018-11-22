@@ -28,15 +28,15 @@ font pango:monospace 8
 set $alt Mod1
 set $win Mod4
 
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 # Key bindings
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 
 # change focus
-bindsym $alt+Left focus left
-bindsym $alt+Down focus down
-bindsym $alt+Up focus up
-bindsym $alt+Right focus right
+bindsym Shift+Left focus left
+bindsym Shift+Down focus down
+bindsym Shift+Up focus up
+bindsym Shift+Right focus right
 
 # move focused window
 bindsym $alt+Shift+Left move left
@@ -44,30 +44,33 @@ bindsym $alt+Shift+Down move down
 bindsym $alt+Shift+Up move up
 bindsym $alt+Shift+Right move right
 
+# advanced window management
+bindsym $alt+Control+Shift+Down split v
+bindsym $alt+Control+Shift+Right split h
+bindsym $alt+Control+Shift+Up layout toggle split
+bindsym $alt+Control+Shift+Left layout tabbed
+
+# workspace management
+bindsym $alt+Control+Right workspace prev
+bindsym $alt+Control+Left workspace next
+bindsym $alt+Control+Down move scratchpad
+bindsym $alt+Control+Up scratchpad show
+
 # application management
 bindsym $win+Left exec i3-sensible-terminal
 bindsym $win+Right exec brave-browser
 bindsym $win+Up exec dmenu_run
 bindsym $win+Down kill
 
-# advanced application management
-bindsym $win+Shift+Left split v
-bindsym $win+Shift+Right split h
-bindsym $win+Shift+Up scratchpad show
-bindsym $win+Shift+Down move scratchpad
+# reserve $win+Shift+<arrow> for more apps/bookmarks
 
 # window sizing
 bindsym $alt+space fullscreen toggle
-bindsym $alt+Shift-space mode "resize"
+bindsym $alt+Control+space mode "resize"
 
 # floating windows
-bindsym $win+Shift+space floating toggle
-bindsym $win+space focus mode_toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $win+s layout stacking
-bindsym $win+w layout tabbed
-bindsym $win+e layout toggle split
+bindsym $alt+Shift+space focus mode_toggle
+bindsym $alt+Control+Shift+space floating toggle
 
 # logging in/out
 # bindsym $win+l exec <lock screen>
@@ -118,9 +121,9 @@ mode "resize" {
 # use Mouse+$win to drag floating windows to their wanted position
 floating_modifier $win
 
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 # Aesthetics
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -148,9 +151,9 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # hide titlebar
 for_window [class="^.*"] border pixel 1
 
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 # Startup processes
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 
 # swap caps lock and escape
 exec_always --no-startup-id xmodmap -e "clear lock"
@@ -164,9 +167,9 @@ exec --no-startup-id compton
 # automatically start emacs daemon
 exec --no-startup-id emacs --daemon=term
 
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 # TODO
-#-----------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 
 # only launch desktop applications (because those are the only ones I can launch)
 # There also is the (new) i3-dmenu-desktop which only displays applications
