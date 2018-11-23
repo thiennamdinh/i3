@@ -53,8 +53,8 @@ bindsym $alt+Control+Shift+Left layout tabbed
 # workspace management
 bindsym $alt+Control+Right workspace prev
 bindsym $alt+Control+Left workspace next
-bindsym $alt+Control+Down move scratchpad
-bindsym $alt+Control+Up scratchpad show
+# bindsym $alt+Control+Down move scratchpad
+# bindsym $alt+Control+Up scratchpad show
 
 # application management
 bindsym $win+Left exec i3-sensible-terminal
