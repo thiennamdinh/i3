@@ -6,3 +6,6 @@ sudo apt-get install pulseaudio
 # background/terminal transparency
 sudo apt-get install feh
 sudo apt-get install compton
+
+# power management
+sudo apt-get install xfce4-power-manager
