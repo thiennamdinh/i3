@@ -58,7 +58,8 @@ bindsym $alt+Control+Left workspace next
 
 # application management
 bindsym $win+Left exec i3-sensible-terminal
-bindsym $win+Right exec brave-browser
+# bindsym $win+Right exec brave-browser
+bindsym $win+Right exec firefox
 bindsym $win+Up exec --no-startup-id i3-dmenu-desktop
 bindsym $win+Down kill
 
@@ -69,7 +70,7 @@ bindsym $win+r mode "resize"
 
 # floating windows
 bindsym $win+f focus mode_toggle
-bindsym $win+F floating toggle
+bindsym $win+Shift+f floating toggle
 
 # switch to workspace
 bindsym $win+1 workspace 1
