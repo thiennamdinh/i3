@@ -190,9 +190,8 @@ exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 # natural scrolling
 exec --no-startup-id synclient VertScrollDelta=-111 HorizScrollDelta=-111
 
-# set multi-monitor display
-exec --no-startup-id xrandr | grep 'HDMI1 connected' && \
-       xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1
+# set bottom bar dpi
+exec --no-startup-id xrandr --dpi 140 
 
 # set wallpaper and transparent terminals
 exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*
