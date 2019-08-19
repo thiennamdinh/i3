@@ -1,14 +1,13 @@
+#!/bin/bash
+
 # sound and brightness
-sudo apt-get install xbacklight
-sudo apt-get install alsa-utils
-sudo apt-get install pulseaudio
+sudo apt install -y xbacklight alsa-utils pulseaudio
 
 # background/terminal transparency
-sudo apt-get install feh
-sudo apt-get install compton
+sudo apt install -y feh compton
 
 # power management
-sudo apt-get install xfce4-power-manager
+sudo apt install -y xfce4-power-manager
 
 # redshift blue light filter
 sudo apt install -y redshift
