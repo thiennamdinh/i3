@@ -58,6 +58,7 @@ bindsym $alt+Control+Left workspace next
 
 # application management
 bindsym $win+Left exec i3-sensible-terminal
+bindsym $win+Shift+Left exec i3-sensible-terminal -e tmux
 # bindsym $win+Right exec brave-browser
 bindsym $win+Right exec firefox
 bindsym $win+Up exec --no-startup-id i3-dmenu-desktop
