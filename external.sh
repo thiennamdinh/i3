@@ -9,3 +9,6 @@ sudo apt-get install compton
 
 # power management
 sudo apt-get install xfce4-power-manager
+
+# redshift blue light filter
+sudo apt install -y redshift
