@@ -57,10 +57,9 @@ bindsym $alt+Control+Left workspace next
 # bindsym $alt+Control+Up scratchpad show
 
 # application management
-bindsym $win+Left exec i3-sensible-terminal
-bindsym $win+Shift+Left exec i3-sensible-terminal -e tmux
-# bindsym $win+Right exec brave-browser
-bindsym $win+Right exec firefox
+bindsym $win+Left exec "if [ $( tmux ls | wc -l) -gt $( tmux ls | grep attached | wc -l) ]; then i3-sensible-terminal -e tmux a; else i3-sensible-terminal -e tmux; fi"
+bindsym $win+Shift+Left exec i3-sensible-terminal
+bindsym $win+Right exec brave-browser-stable
 bindsym $win+Up exec --no-startup-id i3-dmenu-desktop
 bindsym $win+Down kill
 
